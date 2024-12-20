@@ -5,11 +5,13 @@ import { PageHeader } from '../components/pageHeader'
 import { PageFooter } from '../components/pageFooter';
 
 import '../index.css';
+import { NotFoundPage } from '../components/notFoundPage';
 
 const queryClient = new QueryClient()
 
 export const Route = createRootRoute({
   component: RootComponent,
+  notFoundComponent: NotFoundPage,
 })
 
 function RootComponent() {
