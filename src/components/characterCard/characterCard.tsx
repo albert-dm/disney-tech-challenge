@@ -13,7 +13,7 @@ export function CharacterCard({ character }: CharacterCardProps) {
       <img
         src={character.imageUrl ?? noPicImage}
         alt={character.name}
-        className="w-full h-64 object-cover object-top"
+        className="w-full h-96 object-cover object-top"
       />
       <div className="p-4 flex-col gap-8 text-center m-auto">
         <h3 className="font-bold text-lg mb-4">{character.name}</h3>
