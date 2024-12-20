@@ -13,7 +13,7 @@ function RootComponent() {
   return (
     <>
       <PageHeader />
-      <main className='container m-auto'>
+      <main className='container m-auto my-4'>
         <Outlet />
       </main>
       <PageFooter />
