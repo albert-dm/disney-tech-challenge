@@ -3,6 +3,7 @@ import { TanStackRouterDevtools } from '@tanstack/router-devtools'
 import { PageHeader } from '../components/pageHeader'
 
 import '../index.css';
+import { PageFooter } from '../components/pageFooter';
 
 export const Route = createRootRoute({
   component: RootComponent,
@@ -15,7 +16,7 @@ function RootComponent() {
       <main className='container m-auto'>
         <Outlet />
       </main>
-      <footer className='container m-auto'>Disney</footer>
+      <PageFooter />
       <TanStackRouterDevtools position="bottom-right" />
     </>
   )
