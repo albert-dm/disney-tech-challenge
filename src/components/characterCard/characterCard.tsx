@@ -1,6 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { Character } from "../../schemas/character";
 
+import noPicImage from '../../static/image/no-pic.png'
+
 interface CharacterCardProps {
   character: Character;
 }
@@ -9,7 +11,7 @@ export function CharacterCard({ character }: CharacterCardProps) {
   return (
     <article className="bg-white shadow w-80">
       <img
-        src={character.imageUrl}
+        src={character.imageUrl ?? noPicImage}
         alt={character.name}
         className="w-full h-64 object-cover"
       />
@@ -30,4 +32,11 @@ export function CharacterCard({ character }: CharacterCardProps) {
       </div>
     </article>
   );
+}
+
+export function CharacterCardSkeleton(){
+  return (
+    <article className="bg-white shadow w-80 h-96 animate-pulse">
+    </article>
+  )
 }

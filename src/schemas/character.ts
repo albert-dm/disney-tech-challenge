@@ -11,7 +11,7 @@ export const CharacterSchema = z.object({
   enemies: z.array(z.string()),
   sourceUrl: z.string(),
   name: z.string(),
-  imageUrl: z.string(),
+  imageUrl: z.string().optional(),
   createdAt: z.string(),
   updatedAt: z.string(),
   url: z.string(),
