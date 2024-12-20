@@ -1,6 +1,8 @@
-import * as React from 'react'
-import { Link, Outlet, createRootRoute } from '@tanstack/react-router'
+import { Outlet, createRootRoute } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/router-devtools'
+import { PageHeader } from '../components/pageHeader'
+
+import '../index.css';
 
 export const Route = createRootRoute({
   component: RootComponent,
@@ -9,13 +11,11 @@ export const Route = createRootRoute({
 function RootComponent() {
   return (
     <>
-      <header>
-        <div>Logo</div>
-        <input type="text" placeholder="Search" />
-        <div>Avatar</div>
-      </header>
-      <Outlet />
-      <footer>Disney</footer>
+      <PageHeader />
+      <main className='container m-auto'>
+        <Outlet />
+      </main>
+      <footer className='container m-auto'>Disney</footer>
       <TanStackRouterDevtools position="bottom-right" />
     </>
   )
