@@ -17,7 +17,7 @@ function CharacterComponent() {
   const { data } = Route.useLoaderData();
   return (
     <section className="bg-background py-20 px-16 flex flex-col gap-4 justify-center items-center">
-      <article className="flex gap-4 w-full">
+      <article className="flex md:flex-row flex-col gap-4 w-full">
         <img
           src={data.imageUrl ?? noPicImage}
           alt={data.name}
