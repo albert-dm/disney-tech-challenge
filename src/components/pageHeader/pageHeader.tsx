@@ -1,6 +1,6 @@
 import LogoImage from "../../static/image/logo.png";
 import AvatarImage from "../../static/image/avatar.png";
-import { Link, useNavigate } from "@tanstack/react-router";
+import { Link, useNavigate, useSearch } from "@tanstack/react-router";
 import { debounce } from "../../helpers/debounce";
 
 export function PageHeader() {
@@ -13,6 +13,10 @@ export function PageHeader() {
     }
   }, 300);
 
+  const { query } = useSearch({
+    strict: false,
+  })
+
   const handelSearch: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     const search = e.target.value;
     searchText(search);
@@ -22,7 +26,7 @@ export function PageHeader() {
       <Link to="/">
         <img src={LogoImage} alt="logo" />
       </Link>
-      <input type="text" placeholder="Find a character..." className="w-full bg-background py-2 px-4 rounded-3xl" onChange={handelSearch} />
+      <input type="text" placeholder="Find a character..." defaultValue={query} className="w-full bg-background py-2 px-4 rounded-3xl" onChange={handelSearch} />
       <Link to="/profile">
         <img src={AvatarImage} alt="Go to Profile" />
       </Link>
