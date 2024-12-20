@@ -3,3 +3,10 @@ export const formatDate = (date: string) => {
     dateStyle: 'full',
   });
 };
+
+export const calculateAge = (date: string) => {
+  const birthDate = new Date(date);
+  const diff = Date.now() - birthDate.getTime();
+  const ageDate = new Date(diff);
+  return Math.abs(ageDate.getUTCFullYear() - 1970);
+}
